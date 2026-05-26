@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastelaria do Zé - Sistema Refatorado</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Zé Pastel</h1>
+
+  <div class="form">
+    <select id="produto">
+      <option value="pastel">Pastel</option>
+      <option value="caldo">Caldo</option>
+      <option value="refrigerante">Refrigerante</option>
+      <option value="suco">Suco</option>
+    </select>
+
+    <input type="number" id="qtd" placeholder="Quantidade" min="1">
+
+    <div class="button-group">
+      <button class="btn-add" onclick="uiController.adicionarItem()">Adicionar</button>
+      <button class="btn-remove" onclick="uiController.removerUltimo()">Remover Último</button>
+    </div>
+    <button class="btn-finish" onclick="uiController.finalizarPedido()">Finalizar Pedido</button>
+  </div>
+
+  <div class="lista">
+    <h2>Itens do Pedido</h2>
+    <ul id="lista"></ul>
+  </div>
+
+  <div class="total">
+  <div class="total-row">
+    <span>Subtotal:</span>
+    <span>R$ <span id="total">0.00</span></span>
+  </div>
+  <div class="total-row">
+    <span>Desconto:</span>
+    <span>R$ <span id="desconto">0.00</span></span>
+  </div>
+  <div class="total-row">
+    <span>Taxa (5%):</span>
+    <span>R$ <span id="taxa">0.00</span></span>
+  </div>
+  <div class="total-row final">
+    <span>Total Final:</span>
+    <span>R$ <span id="total-final">0.00</span></span>
+  </div>
+</div>
+</div>
+
+<script src="src/models/Produto.js"></script>
+<script src="src/models/Item.js"></script>
+<script src="src/models/ProdutoFactory.js"></script>
+<script src="src/business/CalculadoraPrecos.js"></script>
+<script src="src/business/Pedido.js"></script>
+<script src="src/business/GerenciadorPedidos.js"></script>
+<script src="src/persistence/Persistencia.js"></script>
+<script src="src/view/UIController.js"></script>
+
+</body>
+</html>
