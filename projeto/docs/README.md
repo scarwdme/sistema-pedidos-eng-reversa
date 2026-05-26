@@ -1,6 +1,6 @@
-# 🍴 ZéFood - Sistema de Gestão de Pedidos
+# 🍴 Zé Pastel - Sistema de Gestão de Pedidos
 
-O **ZéFood** (anteriormente *Pastelaria do Zé*) é um sistema web responsivo para controle e fechamento de pedidos de fast-food. Este projeto foi desenvolvido como um estudo de caso prático de **Engenharia de Software**, focado na transição de um sistema legado monolítico/procedural para uma arquitetura modular moderna e altamente escalável.
+O **Zé Pastel** (anteriormente *Pastelaria do Zé*) é um sistema web responsivo para controle e fechamento de pedidos de fast-food. Este projeto foi desenvolvido como um estudo de caso prático de **Engenharia de Software**, focado na transição de um sistema legado monolítico/procedural para uma arquitetura modular moderna e altamente escalável.
 
 ---
 
