@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Paleta de Cores Moderna */
+  --primary: #ff6b6b;
+  --primary-hover: #ee5253;
+  --secondary: #ff9f43;
+  --danger: #ff7675;
+  --danger-hover: #d63031;
+  --success: #1dd1a1;
+  --success-hover: #10ac84;
+  
+  /* Cores de Superfície e Texto */
+  --bg-body: #f0f2f5;
+  --bg-card: #ffffff;
+  --text-main: #2d3436;
+  --text-muted: #636e72;
+  --border-color: #dfe6e9;
+  
+  /* Variáveis de Estrutura */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --transition: all 0.2s ease-in-out;
+}
+
+/* Reset e Estilos Globais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-body);
+  background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container Principal (cardzão) */
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  padding: 35px 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  animation: slideUp 0.6s ease-out;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Formulário e Inputs */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+select, input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: #fafbfc;
+  transition: var(--transition);
+  outline: none;
+  appearance: none;
+}
+
+select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23636e72%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px top 50%;
+  background-size: 12px auto;
+}
+
+select:focus, input:focus {
+  border-color: var(--primary);
+  background-color: var(--bg-card);
+}
+
+/* Botões  */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+button {
+  flex: 1;
+  border: none;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:active {
+  transform: translateY(1px); /* Leve "afundada" ao clicar */
+}
+
+.btn-add {
+  background: var(--success);
+  color: white;
+}
+
+.btn-add:hover {
+  background: var(--success-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra neutra sutil */
+}
+
+.btn-remove {
+  background: #f1f2f6;
+  color: var(--text-muted);
+}
+
+.btn-remove:hover {
+  background: var(--danger);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.btn-finish {
+  width: 100%;
+  background: var(--primary); /* Removido o gradiente para algo mais flat */
+  color: white;
+  margin-top: 10px;
+  padding: 16px;
+  font-size: 1.05rem;
+}
+
+.btn-finish:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra neutra sutil */
+}
+
+/* Lista de Itens */
+.lista {
+  margin-top: 35px;
+}
+
+.lista h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lista ul {
+  list-style: none;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lista ul::-webkit-scrollbar {
+  width: 6px;
+}
+.lista ul::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.lista ul::-webkit-scrollbar-thumb {
+  background: #dcdde1;
+  border-radius: 10px;
+}
+.lista ul::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.lista li {
+  background: #f8f9fa;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border-color); /* Trocado a borda colorida por uma neutra */
+  animation: fadeIn 0.4s ease;
+  font-size: 0.95rem;
+}
+
+.lista li strong {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.lista li span:last-child {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.total {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.total-row.final {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.total-row.final span:last-child {
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-5px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .total h2 span {
+    font-size: 1.5rem;
+  }
+}
