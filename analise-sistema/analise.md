@@ -38,7 +38,6 @@
     Promoções
      • Exibição de banners 
      • Banners promocionais rotativos
----
 
 #### Para o administrador:
     Painel de Controle
