@@ -1,79 +1,49 @@
-# Sistema de Pedidos - Engenharia Reversa
+# Análise Reversa e Modelagem de Sistema de Pedidos
 
-## 🎓 Disciplina
-Arquitetura de Sistemas  
-**Professor:** Dr. Renato William Rodrigues de Souza  
-**Curso:** Análise e Desenvolvimento de Sistemas  
-**Instituição:** IFCE - Campus Boa Viagem  
+Este repositório contém a documentação técnica e os artefatos de modelagem para o projeto de engenharia reversa de um sistema de gestão e entrega de pedidos (delivery). O trabalho simula uma entrega profissional de software, aplicando boas práticas de engenharia de software, mapeamento de regras de negócio, modelagem baseada em padrões de projeto e propostas de evolução arquitetural.
 
 ---
 
-## Sobre o Projeto
-
-Este projeto consiste em um sistema de pedidos simples desenvolvido em HTML, CSS e JavaScript.
-
- **Importante:**  
-O sistema foi propositalmente desenvolvido com problemas de organização, design e arquitetura.
-
----
-
-## Objetivo da Atividade
-
-O objetivo é aplicar conceitos de:
-
-- Arquitetura de Software  
-- Design de Software  
-- Engenharia Reversa  
-- Padrões de Projeto (Factory e Singleton)  
-- Versionamento com Git  
+### Identificação do Aluno
+- **Nome:** Letícia Renely
+- **Curso:** Análise e Desenvolvimento de Sistemas
+- **Disciplina:** Arquitetura de Sistemas
+- **Contexto:** Projeto de Engenharia Reversa e Análise de Arquitetura
 
 ---
 
-## Desafio
+### Estrutura de Arquivos da Pasta `analise-sistema`
 
-Você deverá:
+Com base no mapeamento do projeto, os arquivos estão organizados de forma modular e clara dentro do diretório `analise-sistema`:
 
-1. Analisar o sistema existente  
-2. Identificar problemas estruturais  
-3. Propor melhorias  
-4. Refatorar o código  
-5. Aplicar padrões de projeto  
-6. Utilizar Git corretamente durante o processo  
+#### 1. `analise.md`
+Contém a visão geral do sistema estudado a partir do processo de engenharia reversa. Mapeia os fluxos do usuário, as principais interfaces identificadas no site real e o levantamento de requisitos de alto nível da aplicação.
 
----
+#### 2. `arquitetura.md` (Parte 6 – Modelagem do Sistema)
+Documento focado no mapeamento estático das entidades centrais da aplicação em formato simples, direto e técnico. Inclui:
+- **Classes do Núcleo:** Detalhamento de papéis e responsabilidades para `Plataforma`, `Administrador`, `Cliente`, `Pedidos` e `API`.
+- **Abstrações do Catálogo:** Uso de superclasse abstrata (`ItensEspecificos`) para padronizar e herdar propriedades comuns dos produtos do cardápio.
+- **Mapeamento de Relacionamentos:** Definição formal de Associações Simples, Agregações de ciclo de vida (Todo/Parte) e estruturas de Herança.
+- **Regras de Multiplicidade:** Validação de limites na memória e na base de dados (`1..*` e `0..*`).
 
-## O que analisar
+#### 3. `comparacao.md`
+Texto comparativo ou relatório técnico que confronta as decisões arquiteturais da engenharia reversa com possíveis abordagens alternativas do mercado, discutindo acertos de design e pontos de atrito no sistema legado.
 
-Durante a análise, identifique problemas relacionados a:
+#### 4. `diagrama_de_classes.png`
+Diagrama visual em notação UML (Unified Modeling Language) que representa graficamente todas as classes documentadas em `arquitetura.md`, evidenciando os modificadores de acesso, atributos, métodos e os conectores corretos de associação, agregação e generalização.
 
-- Baixa coesão  
-- Alto acoplamento  
-- Falta de separação de responsabilidades  
-- Duplicação de código  
-- Organização do sistema  
-
----
-
-## Implementações obrigatórias
-
-Você deve aplicar no sistema:
-
-### Factory
-Utilizar para criação de objetos (ex: produtos, pedidos)
-
-### Singleton
-Utilizar para garantir uma única instância (ex: controle do pedido ou persistência)
+#### 5. `melhorias.md` (Plano de Evolução Arquitetural)
+Proposta de melhorias técnicas refinadas e detalhadas para sanar as fragilidades identificadas no modelo atual:
+- **Composição sobre Herança:** Substituição de subclasses estáticas por um modelo de catálogo flexível usando `Produto` e `Categoria`.
+- **Snapshot de Preços:** Introdução da classe associativa `ItemPedido` para travar valores históricos e garantir integridade financeira e fiscal.
+- **Desacoplamento por Mensageria:** Uso de filas assíncronas para o envio de alertas via WhatsApp através da API, mitigando riscos de quedas de terceiros.
+- **Padrão State:** Modelagem robusta para transições do status de entrega.
 
 ---
 
-## Como executar o projeto
+### Tecnologias e Conceitos Aplicados
+- **Documentação Técnica:** Markdown Estruturado
+- **Modelagem:** Draw.io (Diagrama de Classes)
+- **Princípios de Design:** SOLID (*Open/Closed Principle*, Segregação de Contextos)
 
-1. Baixe ou clone o repositório  
-2. Abra o arquivo `index.html` no navegador  
-
----
-
-## 💻 Como clonar o repositório
-
-```bash
-git clone LINK_DO_REPOSITORIO
+```
